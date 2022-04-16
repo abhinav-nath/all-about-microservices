@@ -10,5 +10,13 @@
 
 ## Event Sourcing
 
-Event sourcing defines an approach where all the changes that are made to an object or entity are stored
-as a sequence of immutable events to an event store, as opposed to just saving the current state of the object or entity.
+**Event sourcing** defines an approach where all the changes that are made to an object or entity are stored
+as a sequence of **immutable events** to an event store, as opposed to just saving the current state of the object or entity.
+
+## Benefits of Event Sourcing
+
+- The event store provides **a complete log** of every state change
+- **The state** of an object/aggregate can be recreated by replaying the event store
+- **Improves write performance**. All event types are simply appended to the event store.
+  There are no updates or delete operations.
+- In the case of failure, the event store can be used to **restore read database**
