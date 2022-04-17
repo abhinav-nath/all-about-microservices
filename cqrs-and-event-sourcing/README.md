@@ -37,5 +37,16 @@ It also contains the information required to undertake action based on that inte
 Commands are named with a verb in the **imperative mood** for example:
 
 - Open an account command
-- Deposit funds command:wq
+- Deposit funds command
+
+## What is an Event?
+
+Events are objects that describe something has happened in the application.
+A typical source of events is the **aggregate**.
+When something important has occurred within the aggregate, it will raise an event.
+
+Events are always named in Past Participle. For example:
+
+- Account opened event
+- Funds deposited event
 
