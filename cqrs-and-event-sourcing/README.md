@@ -20,3 +20,22 @@ as a sequence of **immutable events** to an event store, as opposed to just savi
 - **Improves write performance**. All event types are simply appended to the event store.
   There are no updates or delete operations.
 - In the case of failure, the event store can be used to **restore read database**
+
+## Message Types
+
+In CQRS and Event Sourcing, there are 3 important message types:
+
+1. Commands
+2. Events
+3. Queries
+
+### What is a Command?
+
+A command is a combination of **expressed intent**.
+In other words it describes something you want to be done.
+It also contains the information required to undertake action based on that intent.
+Commands are named with a verb in the **imperative mood** for example:
+
+- Open an account command
+- Deposit funds command:wq
+
