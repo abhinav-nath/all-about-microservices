@@ -1,0 +1,33 @@
+server:
+  port: 8052
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/bankAccount"
+    username: "bankAccountUser"
+    password: "bankAccountPassword"
+  flyway:
+    user: "${spring.datasource.username}"
+    password: "${spring.datasource.password}"
+    url: "${spring.datasource.url}"
+    baselineOnMigrate: true
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: bank-account-consumer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+      auto-offset-reset: earliest
+    listener:
+      ack-mode: manual_immediate
