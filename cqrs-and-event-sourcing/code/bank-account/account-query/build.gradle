@@ -1,0 +1,15 @@
+plugins {
+  id 'org.springframework.boot' version "${springBootVersion}"
+}
+
+ext {
+  mainClassName = 'com.codecafe.microservices.cqrs.account.query.AccountQueryApplication'
+}
+
+dependencies {
+  implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+  implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+  implementation "org.springframework.kafka:spring-kafka:${springKafkaVersion}"
+  runtimeOnly "org.postgresql:postgresql:${postgresVersion}"
+  testImplementation "org.springframework.kafka:spring-kafka-test:${springKafkaVersion}"
+}

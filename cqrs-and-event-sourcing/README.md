@@ -39,7 +39,7 @@ Commands are named with a verb in the **imperative mood** for example:
 - Open an account command
 - Deposit funds command
 
-## What is an Event?
+### What is an Event?
 
 Events are objects that describe something has happened in the application.
 A typical source of events is the **aggregate**.
@@ -50,3 +50,15 @@ Events are always named in Past Participle. For example:
 - Account opened event
 - Funds deposited event
 
+## Mediator Pattern
+
+- Behavioural Design Pattern
+- Promotes loose coupling by preventing objects from referring to each other explicitly
+- Simplifies communication between objects by introducing a single object known as the **mediator**
+  that manages the distribution of messages among other objects
+
+## What is an Aggregate?
+
+An **Aggregate** is an entity or group of entities that is always kept in a consistent state.
+The **Aggregate Root** is the entity within the aggregate that is responsible for this consistent state.
+This makes the aggregate the primary building block for implementing a command model in any CQRS based application.

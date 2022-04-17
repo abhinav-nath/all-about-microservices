@@ -1,0 +1,25 @@
+plugins {
+  id 'org.springframework.boot' version "${springBootVersion}"
+}
+
+ext {
+  mainClassName = 'com.codecafe.microservices.cqrs.account.cmd.AccountCommandApplication'
+}
+
+bootJar {
+  enabled = false
+}
+
+jar {
+  enabled = true
+}
+
+dependencies {
+  //implementation project(':cqrs-core')
+  implementation project(':account-common')
+  implementation fileTree('../../cqrs-core/build/libs')
+  implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+  implementation "org.springframework.kafka:spring-kafka:${springKafkaVersion}"
+  implementation "org.springframework.data:spring-data-mongodb:${springDataMongoDBVersion}"
+  testImplementation "org.springframework.kafka:spring-kafka-test:${springKafkaVersion}"
+}

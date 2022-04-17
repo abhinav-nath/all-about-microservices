@@ -1,0 +1,5 @@
+rootProject.name = 'bank-account'
+include 'cqrs-core'
+include 'account-command'
+include 'account-query'
+include 'account-common'
